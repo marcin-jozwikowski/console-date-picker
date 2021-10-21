@@ -10,9 +10,9 @@ use DateTime;
 abstract class AbstractPickerDisplay
 {
     protected \DateTime $value;
-    private string      $separator;
-    private int         $selectedField;
-    private int         $maxField;
+    protected string    $separator;
+    protected int       $selectedField;
+    protected int       $maxField;
 
     abstract protected function getFields(): array;
 

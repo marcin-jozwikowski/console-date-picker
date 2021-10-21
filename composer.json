@@ -1,0 +1,29 @@
+{
+    "name": "marcin-jozwikowski/console-date-picker",
+    "description": "A DateTime picker for Symfony Console commands",
+    "type": "library",
+    "require": {
+        "symfony/console": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "MarcinJozwikowski\\ConsoleDatePicker\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MarcinJozwikowski\\ConsoleDatePicker\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Marcin Jóźwikowski",
+            "email": "symfony@jozwikowski.pl"
+        }
+    ],
+    "minimum-stability": "stable"
+}

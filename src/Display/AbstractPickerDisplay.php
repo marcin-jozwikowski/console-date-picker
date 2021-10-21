@@ -9,16 +9,16 @@ use DateTime;
 
 abstract class AbstractPickerDisplay
 {
-    protected \DateTime $value;
-    protected string    $separator;
-    protected int       $selectedField;
-    protected int       $maxField;
+    protected DateTime $value;
+    protected string   $separator;
+    protected int      $selectedField;
+    protected int      $maxField;
 
     abstract protected function getFields(): array;
 
     public function __construct(?DateTime $defaultDate = null, $separator = '-', bool $startAtRight = true)
     {
-        $this->value         = $defaultDate ?? new \DateTime();
+        $this->value         = $defaultDate ?? new DateTime();
         $this->separator     = $separator;
         $this->maxField      = count($this->getFields()) - 1;
         $this->selectedField = $startAtRight ? $this->maxField : 0;

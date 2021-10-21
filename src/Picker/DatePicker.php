@@ -17,6 +17,8 @@ class DatePicker
     private const READ_CHAR_DOWN  = 'B';
     private const READ_CHAR_LEFT  = 'D';
     private const READ_CHAR_RIGHT = 'C';
+    private const ESCAPE          = "\033";
+    private const RETURN          = "\n";
 
     /** @var resource|null */
     private                 $inputStream;
@@ -45,7 +47,7 @@ class DatePicker
             $cursor->restorePosition();
             $this->output->write($pickerDisplay->getDisplayString());
             $c = fread($this->inputStream, 1);
-            if ("\033" === $c) { // escape sequence - might be one of array keys
+            if (self::ESCAPE === $c) { // escape sequence - might be one of array keys
                 $c .= fread($this->inputStream, 2);
                 switch ($c[2]) {
                     case self::READ_CHAR_UP:
@@ -61,7 +63,7 @@ class DatePicker
                         $pickerDisplay->nextField();
                         break;
                 }
-            } elseif ("\n" === $c) {
+            } elseif (self::RETURN === $c) {
                 // Return has been pressed
                 break;
             }

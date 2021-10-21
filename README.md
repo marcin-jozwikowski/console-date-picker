@@ -5,7 +5,7 @@ A DateTime picker for Symfony Console commands
 ## Installation
 
 ```shell
-composer require marcin-jozwikowski/datetime-picker
+composer require marcin-jozwikowski/console-date-picker
 ```
 
 ## Usage
